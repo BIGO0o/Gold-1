@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ulx8l3fxb3uw"]
 
-[ext_resource type="Script" path="res://pause_menu/pause_menu.gd" id="1_rvc81"]
+[ext_resource type="Script" uid="uid://bfn6d0djhi2ko" path="res://pause_menu/pause_menu.gd" id="1_rvc81"]
 
 [sub_resource type="Animation" id="Animation_x51de"]
 length = 0.001
@@ -99,8 +99,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6vhda"]
 _data = {
-"RESET": SubResource("Animation_x51de"),
-"blur": SubResource("Animation_nbc1b")
+&"RESET": SubResource("Animation_x51de"),
+&"blur": SubResource("Animation_nbc1b")
 }
 
 [node name="PauseMenu" type="Control"]

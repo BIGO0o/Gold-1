@@ -1,12 +1,12 @@
 [gd_scene load_steps=32 format=3 uid="uid://cqcligeqmg1q3"]
 
-[ext_resource type="Script" path="res://player_2.gd" id="1_hflsy"]
+[ext_resource type="Script" uid="uid://bnbd1g7s1qcnn" path="res://player_2.gd" id="1_hflsy"]
 [ext_resource type="Texture2D" uid="uid://cd5b1onj1nb11" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_u0a84"]
 [ext_resource type="PackedScene" uid="uid://bmevwn4oju5l2" path="res://state_machine/state_machine.tscn" id="3_r2tpt"]
-[ext_resource type="Script" path="res://player/States/idle.gd" id="4_avd6s"]
-[ext_resource type="Script" path="res://player/States/jump.gd" id="5_6i8ry"]
-[ext_resource type="Script" path="res://player/States/fall.gd" id="6_yyoxn"]
-[ext_resource type="Script" path="res://player/States/move.gd" id="7_gqylf"]
+[ext_resource type="Script" uid="uid://dpg2babrevehc" path="res://player/States/idle.gd" id="4_avd6s"]
+[ext_resource type="Script" uid="uid://4ura61s8bi1i" path="res://player/States/jump.gd" id="5_6i8ry"]
+[ext_resource type="Script" uid="uid://dg3phryoysgpv" path="res://player/States/fall.gd" id="6_yyoxn"]
+[ext_resource type="Script" uid="uid://c4y8akjcb6nd3" path="res://player/States/move.gd" id="7_gqylf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvh3k"]
 atlas = ExtResource("2_u0a84")
