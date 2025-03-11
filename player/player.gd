@@ -18,9 +18,17 @@ var jump_force: float = 300
 ##RUN SETTINGS
 
 ##DOUBLEJUMP SETTINGS
-
+@export
+var doubleJump: bool
 ##DASH SETTINGS
-
+@export
+var dash_speed: float = 250
+@export
+var dash_max_distance: float = 90
+@export 
+var dash_curve: Curve
+@export
+var cooldown_dash : int = 2
 ##POGO SETTINGS
 @export 
 var  pogo_jump_force: float = 500

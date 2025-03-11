@@ -7,17 +7,8 @@ var fall_state: State
 var idle_state: State
 @export
 var move_state: State
-##@export
-##var dash_cooldown_timer: Timer 
 
-@export
-var cooldown_dash : int = 0
-@export
-var dash_max_distance = 300.0
-@export 
-var dash_speed: float = 20
-@export
-var dash_curve : Curve
+
 
 var is_dashing = false
 var dash_start_position = 0
@@ -29,7 +20,7 @@ var dash_timer = 0
 
 func enter() -> void:
 	super()
-	parent.dash_cooldown_timer.start(cooldown_dash)
+	parent.dash_cooldown_timer.start(parent.cooldown_dash)
 	dash_start_position = parent.position.x
 	is_dashing = true
 	
@@ -50,14 +41,14 @@ func process_physics(delta: float) -> State:
 	else:
 		PlayerStats.onWall = 0
 	var current_distance = abs(parent.position.x - dash_start_position)
-	if current_distance >= dash_max_distance or parent.is_on_wall():
+	if current_distance >= parent.dash_max_distance or parent.is_on_wall():
 		parent.velocity.y += gravity * delta
 		if parent.velocity.y > 0: ## if veloctity y is negative
 			print("fall state")
 			return fall_state ## enter falling state
 		
 	else:
-		parent.velocity.x = PlayerStats.face_direction() * dash_speed * dash_curve.sample(current_distance / dash_max_distance)
+		parent.velocity.x = PlayerStats.face_direction() * parent.dash_speed * parent.dash_curve.sample(current_distance / parent.dash_max_distance)
 		parent.velocity.y = 0
 	parent.move_and_slide()
 	
