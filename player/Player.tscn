@@ -390,7 +390,6 @@ idle_state = NodePath("../idle")
 jump_state = NodePath("../jump")
 move_state = NodePath("../move")
 animation_name = "run"
-move_speed = 165.0
 
 [node name="doublejump" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "idle_state", "move_state", "dash_state")]
 script = ExtResource("9_dto26")

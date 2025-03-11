@@ -13,13 +13,12 @@ var doublejump_state: State
 var dash_state: State
 
 ## makes it possible to change jump force within inspector of godot
-@export 
-var jump_force: float = 300 
+
 
 ## calls the parent class: Enter() with super
 func enter() -> void:
 	super()
-	parent.velocity.y = -jump_force ## sets the velocity to a negative which makes the postion fall
+	parent.velocity.y = -parent.jump_force ## sets the velocity to a negative which makes the postion fall
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed('jump') and not parent.is_on_floor() and PlayerStats.doubleJump < 2 :
@@ -52,7 +51,7 @@ func process_physics(delta: float) -> State:
 		return fall_state ## enter falling state
 	
 	## calculate horizontal x as movement
-	var movement = Input.get_axis('move_left', 'move_right') * move_speed
+	var movement = Input.get_axis('move_left', 'move_right') * parent.move_force
 	## -1 : move_left key is pressed
 	## 1: move_right key is pressed
 	## 0: neither keys are pressed

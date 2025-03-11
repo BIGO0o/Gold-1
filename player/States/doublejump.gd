@@ -44,7 +44,7 @@ func process_physics(delta: float) -> State:
 		return fall_state ## enter falling state
 	
 	## calculate horizontal x as movement
-	var movement = Input.get_axis('move_left', 'move_right') * move_speed
+	var movement = Input.get_axis('move_left', 'move_right') * parent.move_force
 	## -1 : move_left key is pressed
 	## 1: move_right key is pressed
 	## 0: neither keys are pressed

@@ -9,9 +9,10 @@ var state_machine = $state_machine
 ##IDLE SETTINGS
 
 ##MOVE SETTINGS
-
+@export var move_force: float = 120
 ##JUMP SETTINGS
-
+@export 
+var jump_force: float = 300 
 ##FALL SETTINGS
 
 ##RUN SETTINGS
@@ -21,7 +22,8 @@ var state_machine = $state_machine
 ##DASH SETTINGS
 
 ##POGO SETTINGS
-
+@export 
+var  pogo_jump_force: float = 500
 ##TIMERS
 @export var dash_cooldown_timer: Timer
 @export var coyoteTimer: Timer

@@ -5,8 +5,6 @@ extends Node
 ## export allows these variabels to be set in  de editor
 @export
 var animation_name: String	## stores the name of the animation that should play when the state is active
-@export
-var move_speed: float = 120 ## Define the movement speed, with a default of 120
 
 
 ## load gravity from the project, so all states use the same
