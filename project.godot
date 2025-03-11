@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 PlayerStats="*res://Singleton/player_stats.gd"
 
+[display]
+
+window/size/mode=1
+
 [input]
 
 jump={

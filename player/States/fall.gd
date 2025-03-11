@@ -7,10 +7,16 @@ var move_state: State
 @export
 var doublejump_state : State
 @export
+var jump_state : State
+@export
 var dash_state : State
 
 
 func process_input(event: InputEvent) -> State:
+	if Input.is_action_just_pressed("jump") and parent.coyoteTimer.time_left >0 and PlayerStats.doubleJump<1:
+		PlayerStats.doubleJump+=1
+		print("jump")
+		return jump_state
 	if Input.is_action_just_pressed('jump') and not parent.is_on_floor() and PlayerStats.doubleJump<2 and parent.doubleJump:
 		PlayerStats.doubleJump+=1
 		print("double jump state")

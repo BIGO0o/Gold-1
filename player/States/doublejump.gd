@@ -15,6 +15,7 @@ var dash_state: State
 ## calls the parent class: Enter() with super
 func enter() -> void:
 	super()
+	PlayerStats.doubleJump+=1
 	parent.velocity.y = -parent.jump_force ## sets the velocity to a negative which makes the postion fall
 
 func process_input(event: InputEvent) -> State:

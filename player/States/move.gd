@@ -13,7 +13,7 @@ var dash_state : State
 
 
 func process_input(event: InputEvent) -> State:
-	if Input.is_action_just_pressed('jump') and parent.is_on_floor():
+	if Input.is_action_just_pressed('jump') and (parent.is_on_floor() or parent.coyoteTimer.time_left >0):
 		PlayerStats.doubleJump+=1
 		print("jump state")
 		return jump_state
@@ -43,9 +43,11 @@ func process_physics(delta: float) -> State:
 	parent.velocity.x = movement
 	parent.move_and_slide()
 	
- 	
-		
+ 	##update coyote timer
+	
+	
 	if !parent.is_on_floor():
+		parent.coyoteTimer.start(parent.coyoteTimerLenght)
 		print("FALL state")
 		return fall_state
 	return null

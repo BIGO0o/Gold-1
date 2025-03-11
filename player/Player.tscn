@@ -337,6 +337,7 @@ doubleJump = true
 dash_curve = SubResource("Curve_aniqv")
 dash_cooldown_timer = NodePath("TIMERS/DashCooldownTimer")
 coyoteTimer = NodePath("TIMERS/CoyoteTimer")
+coyoteTimerLenght = 0.2
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_80aaa")
@@ -377,11 +378,12 @@ doublejump_state = NodePath("../doublejump")
 dash_state = NodePath("../dash")
 animation_name = "jump"
 
-[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "move_state", "doublejump_state", "dash_state")]
+[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "move_state", "doublejump_state", "jump_state", "dash_state")]
 script = ExtResource("7_33qlx")
 idle_state = NodePath("../idle")
 move_state = NodePath("../move")
 doublejump_state = NodePath("../doublejump")
+jump_state = NodePath("../jump")
 dash_state = NodePath("../dash")
 animation_name = "fall"
 
@@ -453,3 +455,4 @@ script = ExtResource("8_calpy")
 one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="TIMERS"]
+one_shot = true

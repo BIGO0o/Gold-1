@@ -35,6 +35,7 @@ var  pogo_jump_force: float = 500
 ##TIMERS
 @export var dash_cooldown_timer: Timer
 @export var coyoteTimer: Timer
+@export var coyoteTimerLenght: float
 
 
 
@@ -48,6 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
 
 func _physics_process(delta: float) -> void:
+	print(coyoteTimer.time_left)
 	state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
