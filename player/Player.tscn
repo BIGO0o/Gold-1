@@ -333,6 +333,7 @@ height = 12.0
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("dash_cooldown_timer", "coyoteTimer")]
 collision_layer = 3
 script = ExtResource("1_fb3bs")
+doubleJump = true
 dash_curve = SubResource("Curve_aniqv")
 dash_cooldown_timer = NodePath("TIMERS/DashCooldownTimer")
 coyoteTimer = NodePath("TIMERS/CoyoteTimer")

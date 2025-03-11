@@ -11,7 +11,7 @@ var dash_state : State
 
 
 func process_input(event: InputEvent) -> State:
-	if Input.is_action_just_pressed('jump') and not parent.is_on_floor() and PlayerStats.doubleJump<2:
+	if Input.is_action_just_pressed('jump') and not parent.is_on_floor() and PlayerStats.doubleJump<2 and parent.doubleJump:
 		PlayerStats.doubleJump+=1
 		print("double jump state")
 		return doublejump_state
