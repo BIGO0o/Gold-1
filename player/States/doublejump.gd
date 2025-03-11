@@ -11,13 +11,11 @@ var move_state: State
 var dash_state: State
 
 ## makes it possible to change jump force within inspector of godot
-@export 
-var jump_force: float = 300 
 
 ## calls the parent class: Enter() with super
 func enter() -> void:
 	super()
-	parent.velocity.y = -jump_force ## sets the velocity to a negative which makes the postion fall
+	parent.velocity.y = -parent.jump_force ## sets the velocity to a negative which makes the postion fall
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_pressed("dash") and dash_state.magDash(): ## input is left or right?
