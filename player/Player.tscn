@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://btfei6t8fvvpo"]
+[gd_scene load_steps=57 format=3 uid="uid://btfei6t8fvvpo"]
 
 [ext_resource type="Script" uid="uid://cwglayus2g14e" path="res://player/player.gd" id="1_fb3bs"]
 [ext_resource type="Texture2D" uid="uid://cd5b1onj1nb11" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ppc3s"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://chf4et4nd11mc" path="res://player/labelState/labelCurrState.gd" id="8_calpy"]
 [ext_resource type="Script" uid="uid://bkxdr8wos2s3v" path="res://player/States/doublejump.gd" id="9_dto26"]
 [ext_resource type="Script" uid="uid://b7xfm60v7qkrk" path="res://player/States/dash.gd" id="10_ymcuy"]
-[ext_resource type="Script" uid="uid://dnj22sbwvwjj5" path="res://player/States/pogo.gd" id="11_v4f8b"]
 [ext_resource type="Script" uid="uid://dtl83kxefofiq" path="res://player/labelState/labeljumps.gd" id="11_vawm7"]
 [ext_resource type="Script" uid="uid://8a1dxrdrja65" path="res://player/labelState/label_is_on_wall.gd" id="12_58dup"]
 [ext_resource type="Script" uid="uid://g83e6molc6sl" path="res://player/coins_counter.gd" id="12_f232e"]
@@ -350,14 +349,13 @@ shape = SubResource("CapsuleShape2D_yhjnv")
 [node name="state_machine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("3_6u2qt")]
 starting_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state", "run_state", "dash_state", "pogo_state")]
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state", "run_state", "dash_state")]
 script = ExtResource("4_lxl47")
 fall_state = NodePath("../fall")
 jump_state = NodePath("../jump")
 move_state = NodePath("../move")
 run_state = NodePath("../run")
 dash_state = NodePath("../dash")
-pogo_state = NodePath("../pogo")
 animation_name = "idle"
 
 [node name="move" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state", "run_state", "dash_state")]
@@ -409,14 +407,6 @@ fall_state = NodePath("../fall")
 idle_state = NodePath("../idle")
 move_state = NodePath("../move")
 animation_name = "dash"
-
-[node name="pogo" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "idle_state", "move_state", "dash_state")]
-script = ExtResource("11_v4f8b")
-fall_state = NodePath("../fall")
-idle_state = NodePath("../idle")
-move_state = NodePath("../move")
-dash_state = NodePath("../dash")
-animation_name = "jump"
 
 [node name="jumpCounter" type="Label" parent="."]
 offset_left = -79.0

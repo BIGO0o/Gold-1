@@ -24,7 +24,6 @@ func process_input(event: InputEvent) -> State:
 	if Input.is_action_pressed("dash") and dash_state.magDash(): ## input is left or right?
 		print("dash state")
 		return dash_state
-		
 	return null
 
 func process_physics(delta: float) -> State:
