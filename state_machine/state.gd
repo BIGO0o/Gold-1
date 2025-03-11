@@ -8,11 +8,12 @@ var animation_name: String	## stores the name of the animation that should play 
 @export
 var move_speed: float = 120 ## Define the movement speed, with a default of 120
 
+
 ## load gravity from the project, so all states use the same
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ## Hold a reference to the parent so that it can be controlled by the state
-var parent: Player
+var parent: CharacterBody2D
 
 ## is called when the state becomes active
 func enter() -> void:

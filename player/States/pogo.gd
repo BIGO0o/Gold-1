@@ -10,6 +10,7 @@ var move_state: State
 @export
 var dash_state: State
 
+
 ## makes it possible to change jump force within inspector of godot
 @export 
 var jump_force: float = 500

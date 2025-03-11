@@ -6,7 +6,6 @@ var starting_state: State
 ## keeps track on the active state
 var current_state: State
 
-
 # Initialize the state machine by giving each child state a reference to the
 # parent object it belongs to and enter the default starting_state.
 func init(parent: CharacterBody2D) -> void:

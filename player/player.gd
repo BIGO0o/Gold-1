@@ -6,7 +6,25 @@ var animations = $animations
 @onready
 var state_machine = $state_machine
 
+##IDLE SETTINGS
 
+##MOVE SETTINGS
+
+##JUMP SETTINGS
+
+##FALL SETTINGS
+
+##RUN SETTINGS
+
+##DOUBLEJUMP SETTINGS
+
+##DASH SETTINGS
+
+##POGO SETTINGS
+
+##TIMERS
+@export var dash_cooldown_timer: Timer
+@export var coyoteTimer: Timer
 
 
 

@@ -7,8 +7,8 @@ var fall_state: State
 var idle_state: State
 @export
 var move_state: State
-@export
-var dash_cooldown_timer: Timer 
+##@export
+##var dash_cooldown_timer: Timer 
 
 @export
 var cooldown_dash : int = 0
@@ -29,7 +29,7 @@ var dash_timer = 0
 
 func enter() -> void:
 	super()
-	dash_cooldown_timer.start(cooldown_dash)
+	parent.dash_cooldown_timer.start(cooldown_dash)
 	dash_start_position = parent.position.x
 	is_dashing = true
 	
@@ -89,9 +89,9 @@ func process_physics(delta: float) -> State:
 	return null
 
 func magDash():
-	if dash_cooldown_timer.time_left == 0:
-		dash_cooldown_timer.stop()
+	if parent.dash_cooldown_timer.time_left == 0:
+		parent.dash_cooldown_timer.stop()
 		return true
 	else:
-		print(dash_cooldown_timer.time_left)
+		print(parent.dash_cooldown_timer.time_left)
 		return false

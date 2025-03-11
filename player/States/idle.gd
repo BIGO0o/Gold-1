@@ -11,6 +11,8 @@ var move_state: State
 var run_state: State
 @export
 var dash_state: State
+@export
+var pogo_state: State
 
 ## calls the parent class: enter() with super()
 func enter() -> void:
@@ -19,6 +21,9 @@ func enter() -> void:
 
 ## handles input events and determines if the state should transition to another state based on player input
 func process_input(event: InputEvent) -> State:
+	if Input.is_action_just_pressed("pogo_jump"):
+		print("pogo")
+		return pogo_state
 	if Input.is_action_just_pressed("dash") and dash_state.magDash():
 		print("dash")
 		return dash_state
