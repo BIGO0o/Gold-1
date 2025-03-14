@@ -22,6 +22,7 @@ PlayerStats="*res://Singleton/player_stats.gd"
 [display]
 
 window/size/mode=1
+window/vsync/vsync_mode=0
 
 [input]
 

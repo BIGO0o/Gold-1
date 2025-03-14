@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://ck8im0uaqjiki"]
+[gd_scene load_steps=19 format=4 uid="uid://ck8im0uaqjiki"]
 
 [ext_resource type="PackedScene" uid="uid://btfei6t8fvvpo" path="res://player/Player.tscn" id="1_7obu2"]
+[ext_resource type="Script" uid="uid://cnlbe4a4i1ugj" path="res://Scenes/game.gd" id="1_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://wblfy2p6k3i" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_7ewx5"]
 [ext_resource type="PackedScene" uid="uid://dopqqsvfudwhi" path="res://Scenes/platform_dark.tscn" id="3_ffamx"]
 [ext_resource type="PackedScene" uid="uid://c3ogi10gtxmb0" path="res://Scenes/platform.tscn" id="4_yrayt"]
@@ -377,6 +378,7 @@ _data = {
 distance = -33.0
 
 [node name="Game" type="Node"]
+script = ExtResource("1_ldgsr")
 
 [node name="Voorgrond" type="TileMapLayer" parent="."]
 position = Vector2(-1, -14)
@@ -407,15 +409,18 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -30.0
-offset_top = 13.0
-offset_right = 82.0
-offset_bottom = 88.0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 192.0
+offset_bottom = 74.0
 theme_override_fonts/font = ExtResource("8_vjbuc")
 theme_override_font_sizes/font_size = 8
-text = "space to jump
-a  = move left
-d = move right"
+text = "space/ ^ =jump
+a / <-  = move left
+d / -> = move right
+CAPS = dash
+shift + a/d = run
+states: move, run, jump, dash fall and idle"
 
 [node name="Slimes" type="Node" parent="."]
 

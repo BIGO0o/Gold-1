@@ -20,9 +20,7 @@ func enter() -> void:
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_pressed("dash") and dash_state.magDash(): ## input is left or right?
-		print("dash state")
 		return dash_state
-		
 	return null
 
 ## handles physics processing for the state
@@ -39,7 +37,6 @@ func process_physics(delta: float) -> State:
 	
 	## transition to fall state
 	if parent.velocity.y > 0: ## if veloctity y is negative
-		print("fall state")
 		return fall_state ## enter falling state
 	
 	## calculate horizontal x as movement
@@ -55,7 +52,6 @@ func process_physics(delta: float) -> State:
 	
 	## transition to movement state
 	if movement != 0: ## if the movement is 1 : move to right 
-		print("Run state")
 		parent.animations.flip_h = movement < 0 ## check need to flip animation: 1 < 0 == false but -1 < 0: true
 	parent.velocity.x = movement ## update the horizontal movement of the parent
 	parent.move_and_slide() ## moves the parent object based on its velocity and handles collision

@@ -24,10 +24,8 @@ func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed('jump') and not parent.is_on_floor() and PlayerStats.doubleJump < 2 and parent.doubleJump:
 		PlayerStats.doubleJump+=1
 		print(PlayerStats.doubleJump)
-		print("double jump state")
 		return doublejump_state
 	if Input.is_action_pressed("dash") and dash_state.magDash(): ## input is left or right?
-		print("dash state")
 		return dash_state
 		
 	return null
@@ -47,7 +45,6 @@ func process_physics(delta: float) -> State:
 	
 	## transition to fall state
 	if parent.velocity.y > 0: ## if veloctity y is negative
-		print("fall state")
 		return fall_state ## enter falling state
 	
 	## calculate horizontal x as movement
@@ -71,7 +68,6 @@ func process_physics(delta: float) -> State:
 	if parent.is_on_floor():
 		PlayerStats.doubleJump=0
 		if movement != 0:
-			print("run")
 			return move_state ## transitio to move_state
 		return idle_state ## transition to idle state
 	

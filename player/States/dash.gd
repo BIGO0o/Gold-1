@@ -44,7 +44,6 @@ func process_physics(delta: float) -> State:
 	if current_distance >= parent.dash_max_distance or parent.is_on_wall():
 		parent.velocity.y += gravity * delta
 		if parent.velocity.y > 0: ## if veloctity y is negative
-			print("fall state")
 			return fall_state ## enter falling state
 		
 	else:

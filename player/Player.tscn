@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://btfei6t8fvvpo"]
+[gd_scene load_steps=55 format=3 uid="uid://btfei6t8fvvpo"]
 
 [ext_resource type="Script" uid="uid://cwglayus2g14e" path="res://player/player.gd" id="1_fb3bs"]
 [ext_resource type="Texture2D" uid="uid://cd5b1onj1nb11" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ppc3s"]
@@ -11,8 +11,6 @@
 [ext_resource type="Script" uid="uid://chf4et4nd11mc" path="res://player/labelState/labelCurrState.gd" id="8_calpy"]
 [ext_resource type="Script" uid="uid://bkxdr8wos2s3v" path="res://player/States/doublejump.gd" id="9_dto26"]
 [ext_resource type="Script" uid="uid://b7xfm60v7qkrk" path="res://player/States/dash.gd" id="10_ymcuy"]
-[ext_resource type="Script" uid="uid://dtl83kxefofiq" path="res://player/labelState/labeljumps.gd" id="11_vawm7"]
-[ext_resource type="Script" uid="uid://8a1dxrdrja65" path="res://player/labelState/label_is_on_wall.gd" id="12_58dup"]
 [ext_resource type="Script" uid="uid://g83e6molc6sl" path="res://player/coins_counter.gd" id="12_f232e"]
 
 [sub_resource type="Curve" id="Curve_aniqv"]
@@ -408,28 +406,12 @@ idle_state = NodePath("../idle")
 move_state = NodePath("../move")
 animation_name = "dash"
 
-[node name="jumpCounter" type="Label" parent="."]
-offset_left = -79.0
-offset_top = 14.0
-offset_right = -39.0
-offset_bottom = 37.0
-theme_override_font_sizes/font_size = 8
-script = ExtResource("11_vawm7")
-
 [node name="coinsCounter" type="Label" parent="."]
 offset_left = 3.0
 offset_top = -35.0
 offset_right = 43.0
 offset_bottom = -12.0
 script = ExtResource("12_f232e")
-
-[node name="IsOnWall" type="Label" parent="."]
-offset_left = -55.0
-offset_top = -38.0
-offset_right = -15.0
-offset_bottom = -15.0
-theme_override_font_sizes/font_size = 8
-script = ExtResource("12_58dup")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -46.0
